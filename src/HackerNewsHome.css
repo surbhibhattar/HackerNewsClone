@@ -1,0 +1,52 @@
+.mainBody {
+  background: #f6f6ef;
+}
+
+#navBar {
+  background: #ff742b !important;
+}
+
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#footer ul {
+  list-style-type: none;
+}
+
+#footer ul li {
+  display: inline;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.filters span,
+.filters div {
+  margin-right: 10px;
+}
+
+.container-fluid {
+  padding: 15px;
+  padding-left: 25px;
+  padding-right: 0;
+}
+
+.btn-success,
+.btn-success:hover,
+.btn-success:active,
+.btn-success:visited {
+  color: #5c5c5c;
+  background-color: #f6f6ef;
+  border-color: black;
+}
+
+.filters > .col {
+  display: inline-flex;
+}
+
+.filters > .col:nth-child(2) {
+  display: flex;
+  justify-content: flex-end;
+}
