@@ -50,3 +50,32 @@
   display: flex;
   justify-content: flex-end;
 }
+
+#searchInput {
+  display: flex;
+  align-items: center;
+}
+
+#searchInput input {
+  width: 100%;
+  height: 70%;
+}
+
+#navigationBar {
+  background: #ff742b;
+  display: flex;
+  align-items: center;
+}
+
+#navigationBar * {
+  font-size: 0.8em;
+}
+
+#navigationBar > div {
+  width: 100%;
+}
+
+#navigationBar > div > div {
+  display: flex;
+  align-items: center;
+}

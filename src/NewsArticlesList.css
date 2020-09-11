@@ -1,0 +1,14 @@
+.blogTitle a {
+  text-decoration: none;
+  color: black;
+}
+
+.blogLink a,
+.userDetails span,
+.userDetails span a {
+  color: #828282;
+}
+
+.userDetails span:nth-child(2n) {
+  padding: 0 5px 0 5px;
+}

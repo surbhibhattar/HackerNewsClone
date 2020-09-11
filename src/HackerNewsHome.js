@@ -12,43 +12,49 @@ import {
   Col,
 } from "react-bootstrap";
 
+import { NewsArticlesList } from "./NewsArticlesList.js";
+import { articles } from "./NewsArticlesData.js";
+import { PaginationComp } from "./PaginationComp";
 import "./HackerNewsHome.css";
 
 export class HackerNewsHome extends React.Component {
   render() {
     return (
       <div style={{ width: "90%" }}>
-        <Navbar bg="light" expand="lg" id="navBar">
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-            <Form inline>
-              <FormControl
+        {/**HEADER */}
+        <Container fluid id="navigationBar" style={{ height: "2em" }}>
+          <Row xs={12}>
+            {/* <Navbar bg="light" expand="lg" id="navBar"> */}
+            <Col xs={2}>
+              <a href="#home">
+                <img
+                  src="HackerNewsLogo.png"
+                  alt="Hacker News Logo"
+                  style={{ width: "48px" }}
+                />
+              </a>
+              <a href="#" style={{ color: "black" }}>
+                Search Hacker News
+              </a>
+            </Col>
+            <Col xs={8} style={{ marginLeft: "10px" }} id="searchInput">
+              <input
                 type="text"
-                placeholder="Search"
+                placeholder="Search stories by title, url or author"
                 className="mr-sm-2"
               />
-              <Button variant="outline-success">Search</Button>
-            </Form>
-          </Navbar.Collapse>
-        </Navbar>
+            </Col>
+            <Col xs={1}>
+              <a href="#" style={{ color: "black" }}>
+                Settings
+              </a>
+            </Col>
+            {/* </Navbar> */}
+          </Row>
+        </Container>
+
+        {/**MAIN BODY */}
+
         <Container fluid className="mainBody">
           <Row className="filters">
             <Col>
@@ -112,9 +118,16 @@ export class HackerNewsHome extends React.Component {
               </Dropdown>
             </Col>
           </Row>
-          <Row>List of Posts</Row>
-          <Row>Pagination</Row>
+          <Row>
+            <NewsArticlesList articles={articles} />
+          </Row>
+          <Row style={{ justifyContent: "center" }}>
+            <PaginationComp />
+          </Row>
         </Container>
+
+        {/**FOOTER */}
+
         <Container>
           <Navbar
             expand="lg"
