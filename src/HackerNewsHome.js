@@ -13,11 +13,23 @@ import {
 } from "react-bootstrap";
 
 import { NewsArticlesList } from "./NewsArticlesList.js";
-import { articles } from "./NewsArticlesData.js";
+// import { articles } from "./NewsArticlesData.js";
 import { PaginationComp } from "./PaginationComp";
 import "./HackerNewsHome.css";
 
 export class HackerNewsHome extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pNo: 1,
+    };
+    this.setPNo = this.setPNo.bind(this);
+  }
+
+  setPNo(currentPage) {
+    this.setState({ pNo: currentPage });
+  }
+
   render() {
     return (
       <div style={{ width: "90%" }}>
@@ -119,10 +131,10 @@ export class HackerNewsHome extends React.Component {
             </Col>
           </Row>
           <Row>
-            <NewsArticlesList articles={articles} />
+            <NewsArticlesList pNo={this.state.pNo} />
           </Row>
           <Row style={{ justifyContent: "center" }}>
-            <PaginationComp />
+            <PaginationComp pNo={this.state.pNo} setPNo={this.setPNo} />
           </Row>
         </Container>
 
